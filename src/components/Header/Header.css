@@ -9,6 +9,7 @@
 
 .nav-link.active {
   background-color: #111827;
+  color: #fff !important;
 }
 
 @media screen and (max-width: 992px) {
