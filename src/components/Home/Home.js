@@ -1,19 +1,18 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
-import BannerImg from '../../images/start-up-quiz-banner.png'
+import Banner from '../Banner/Banner';
+import QuizTopics from '../QuizTopics/QuizTopics';
 
 const Home = () => {
-  const quizTopics = useLoaderData();
+  const quizTopics = useLoaderData().data;
   console.log(quizTopics);
   return (
     <>
-      <div className="banner-section py-4">
-        <div className="container">
-          <div className="banner-img">
-            <img className='img-fluid rounded' src={BannerImg} alt="Start-UP Banner" />
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Banner></Banner>
+        <QuizTopics quizTopics={quizTopics}></QuizTopics>
+      </Container>
     </>
   );
 };
