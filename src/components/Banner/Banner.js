@@ -1,6 +1,5 @@
 import React from 'react';
 import './Banner.css'
-import BannerImg from '../../images/start-up-quiz-banner.png'
 import { Container } from 'react-bootstrap';
 
 const Banner = () => {
@@ -8,8 +7,16 @@ const Banner = () => {
     <>
       <Container>
         <div className="banner-section py-4">
-          <div className="banner-img">
-            <img className='img-fluid rounded' src={BannerImg} alt="Start-UP Banner" />
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <h1>START-UP QUIZ</h1>
+              <p>Discover your startup mindset and best work environment using our free online quiz and figure out where you can work. Get immediate feedback that you can share with programming.</p>
+            </div>
+            <div className="col-md-6">
+              <div className="banner-img">
+                <img className='img-fluid rounded' src="./images/banner-img.png" alt="Start-UP Banner" />
+              </div>
+            </div>
           </div>
         </div>
       </Container>

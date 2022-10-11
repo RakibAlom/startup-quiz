@@ -9,7 +9,7 @@ const Topic = ({ topic }) => {
   return (
     <div>
       <Card className='border-0 shadow-sm mb-2'>
-        <Card.Body className='border-0 p-2'>
+        <Card.Body className='border-0 p-3'>
           <div className="topic-img bg-secondary rounded">
             <img className='img-fluid' src={topic.logo} alt={topic.name} />
           </div>

@@ -1,33 +1,17 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Blog = () => {
-  const blogs = [
-    {
-      id: 1,
-      title: "What is the purpose of React Router?",
-      description: "",
-    },
-    {
-      id: 2,
-      title: "How does context API works?",
-      description: "",
-    },
-    {
-      id: 3,
-      title: "What is useRef?",
-      description: "",
-    }
-  ]
+  const blogs = useLoaderData()
   return (
     <>
       <div className="container py-5">
         {
           blogs.map(blog =>
-            <div className='single-blog p-3 p-md-4 shadow-lg mb-4 rounded' key={blog.id}>
-              <h2>{blog.title}</h2>
-              <div>
-                {blog.description}
-              </div>
+            <div className='single-blog p-3 p-md-4 shadow mb-4 rounded' key={blog.id}>
+              {blog.thumbnail && <img className='img-fluid rounded' src={blog.thumbnail} alt={blog.title} />}
+              <h2 className='pt-4 pb-2'>{blog.title}</h2>
+              <div dangerouslySetInnerHTML={{ __html: blog.description }}></div>
             </div>
           )
         }

@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import Home from './components/Home/Home';
 import Quiz from './components/QuizTopics/Quiz/Quiz';
 import QuizTopics from './components/QuizTopics/QuizTopics';
+import Statistics from './components/Statistics/Statistics';
 import Main from './layouts/Main/Main';
 
 function App() {
@@ -27,9 +29,13 @@ function App() {
           loader: async ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`),
           element: <Quiz></Quiz>
         },
-        { path: '/statistics', element: <h2>statistics</h2> },
-        { path: '/blog', element: <Blog></Blog> },
-        { path: '/about', element: <h2>about</h2> },
+        { path: '/statistics', element: <Statistics></Statistics> },
+        {
+          path: '/blog',
+          loader: () => fetch('./blogs.json'),
+          element: <Blog></Blog>
+        },
+        { path: '/about', element: <About></About> },
         { path: '*', element: <h2>404 Found</h2> }
       ]
     }
