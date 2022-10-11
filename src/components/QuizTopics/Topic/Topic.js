@@ -13,7 +13,7 @@ const Topic = ({ topic }) => {
           </div>
           <div className="topic-info pt-3 pb-1 d-flex justify-content-between align-items-center">
             <h5 className='m-0'>{topic.name}</h5>
-            <Link to={`/quiz/topics/${topic.id}`}>
+            <Link to={`/topics/${topic.id}`}>
               <Button variant='primary' size="sm">
                 Start Practice
                 <span className='ps-2'>
