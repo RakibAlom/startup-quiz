@@ -29,7 +29,11 @@ function App() {
           loader: async ({ params }) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`),
           element: <Quiz></Quiz>
         },
-        { path: '/statistics', element: <Statistics></Statistics> },
+        {
+          path: '/statistics',
+          loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'),
+          element: <Statistics></Statistics>
+        },
         {
           path: '/blog',
           loader: () => fetch('./blogs.json'),
