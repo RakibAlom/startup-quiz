@@ -11,8 +11,8 @@ const QuizTopics = () => {
         <div className='row my-4'>
           {
             quizTopics.map(topic =>
-              <div className='col-md-6 col-lg-3'>
-                <Topic key={topic.id} topic={topic}></Topic>
+              <div className='col-md-6 col-lg-3' key={topic.id}>
+                <Topic topic={topic}></Topic>
               </div>
             )
           }
