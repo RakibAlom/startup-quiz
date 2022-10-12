@@ -9,7 +9,7 @@ const About = () => {
         <div className="p-4 shadow my-4 rounded">
           <img className='img-fluid rounded about-img' src="./images/start-up-quiz-banner.png" alt="Start-Up Quiz Banner" />
           <h2 className='py-3'>About Start-Up Quiz</h2>
-          <div className='text-secondary'>
+          <div>
 
             <p>Our programming startup is a company designed to build, launch, and iterate at an accelerated pace. They are composed of specially-created teams focused on delivering a software product.</p>
 
