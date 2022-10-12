@@ -10,11 +10,11 @@ const Statistics = () => {
   return (
     <>
       <Container>
-        <div className="statistics-chart p-4 p-lg-5 my-4 shadow">
+        <div className="statistics-chart py-4 px-0 p-lg-5 my-4 shadow">
           <h2 className='pb-3 ps-5'>Quiz Statistics Chart</h2>
           <LineChart
-            width={500}
-            height={400}
+            width={400}
+            height={300}
             data={quizTopics}
           >
             <CartesianGrid strokeDasharray="3 3" />

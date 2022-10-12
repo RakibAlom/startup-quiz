@@ -8,10 +8,10 @@ import './Header.css'
 const Header = () => {
   return (
     <div className='header'>
-      <Navbar bg="dark" expand="lg" variant="dark">
-        <Container>
+      <Container>
+        <Navbar className='px-3 rounded mt-3 bg-primary-color' expand="lg" variant="dark">
           <NavLink to="/" className="navbar-brand">START-UP QUIZ</NavLink>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle className='outline-none shadow-none' aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <NavLink className="nav-link" to="/topics">Topics</NavLink>
@@ -20,8 +20,8 @@ const Header = () => {
               <NavLink className="nav-link" to="/about">About</NavLink>
             </Nav>
           </Navbar.Collapse>
-        </Container>
-      </Navbar>
+        </Navbar>
+      </Container>
     </div>
   );
 };

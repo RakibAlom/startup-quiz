@@ -3,14 +3,29 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Alert } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './QuizQuestion.css'
 
 const QuizQuestion = ({ question }) => {
   const [selected, setSelected] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
 
+
   const handleSelected = (option) => {
+
     setSelected(option)
+
+    if (question.correctAnswer === option) {
+      toast.success("Your Answer is Correct !", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+
+    } else {
+      toast.error("Sorry, Your Answer is Wrong!", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
   }
   return (
     <>
@@ -31,13 +46,14 @@ const QuizQuestion = ({ question }) => {
           <div className="quiz-options">
             {
               question.options.map((option, index) =>
-                <div onClick={() => handleSelected(option)} className={`option d-flex px-3 py-1 ${selected === option ? "bg-success text-white" : null} bg-light rounded gap-3 align-items-center`} key={index}>
+                <div onClick={() => handleSelected(option)} className={`option d-flex px-3 py-2 ${selected === option ? "bg-primary-color text-white" : "bg-light"} rounded gap-3 align-items-center`} key={index}>
                   <span className='fs-3'><FontAwesomeIcon icon={selected === option ? faSquareCheck : faSquare} /></span>
                   <p className='fs-5 m-0'>{option}</p>
                 </div>
               )
             }
           </div>
+          <ToastContainer />
         </div>
       </div>
     </>

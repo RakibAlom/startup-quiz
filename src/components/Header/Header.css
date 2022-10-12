@@ -1,15 +1,11 @@
-.header {
-  font-family: 'Inter', sans-serif;
-}
-
 .nav-link {
   border-radius: 0.375rem;
   margin-left: 10px;
 }
 
 .nav-link.active {
-  background-color: #111827;
-  color: #fff !important;
+  background-color: #fff;
+  color: var(--text-primary-color) !important;
 }
 
 @media screen and (max-width: 992px) {

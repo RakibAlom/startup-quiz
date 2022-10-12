@@ -1,0 +1,14 @@
+.not-found-section {
+  min-height: 90vh;
+}
+
+.nav-section a {
+  text-decoration: none;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-section a:hover {
+  text-decoration: underline;
+}

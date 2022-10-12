@@ -5,7 +5,7 @@ const Blog = () => {
   const blogs = useLoaderData()
   return (
     <>
-      <div className="container py-5">
+      <div className="container py-4">
         {
           blogs.map(blog =>
             <div className='single-blog p-3 p-md-4 shadow mb-4 rounded' key={blog.id}>
