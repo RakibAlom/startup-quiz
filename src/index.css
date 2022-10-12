@@ -6,6 +6,28 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #111827;
+  --primary-light-color: rgba(17, 24, 39, 0.9);
+}
+
+.bg-primary-color {
+  background-color: var(--primary-color) !important;
+}
+
+.bg-primary-light-color {
+  background-color: var(--primary-light-color) !important;
+}
+
+.text-primary-color {
+  color: var(--primary-color) !important;
+}
+
+.border-color {
+  border-color: var(--primary-color) !important;
+}
+
 body {
   font-family: 'Roboto Slab', serif !important;
+  color: var(--primary-color) !important;
 }

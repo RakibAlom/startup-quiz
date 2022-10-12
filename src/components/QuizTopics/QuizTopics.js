@@ -10,7 +10,7 @@ const QuizTopics = () => {
     <>
       <Container>
         <div className="quiz-topics">
-          <h2 className='mt-4 text-center shadow-sm py-3 rounded'>Quiz Topics</h2>
+          <h2 className='mt-4 text-center shadow py-3 rounded'>Quiz Topics</h2>
           <div className='row my-4'>
             {
               quizTopics.map(topic =>

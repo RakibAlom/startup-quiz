@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom';
 const Topic = ({ topic }) => {
   return (
     <div>
-      <Card className='border-0 shadow-sm mb-2'>
+      <Card className='border-0 shadow mb-2'>
         <Card.Body className='border-0 p-3'>
+          <h4 className='m-0 pb-2 text-center'>{topic.name}</h4>
           <div className="topic-img bg-primary-color rounded">
             <img className='img-fluid' src={topic.logo} alt={topic.name} />
           </div>
-          <div className="topic-info pt-3 pb-1 d-flex justify-content-between align-items-center">
-            <h5 className='m-0'>{topic.name}</h5>
+          <div className="pt-3 pb-1">
             <Link to={`/topics/${topic.id}`}>
-              <Button className='bg-primary-color border-0' variant='primary'>
-                Start Practice
+              <Button className='bg-primary-color border-0 w-100' variant='primary'>
+                Start Quiz
                 <span className='ps-2'>
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
