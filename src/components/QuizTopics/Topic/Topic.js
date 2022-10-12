@@ -16,7 +16,7 @@ const Topic = ({ topic }) => {
           </div>
           <div className="pt-3 pb-1">
             <Link to={`/topics/${topic.id}`}>
-              <Button className='bg-primary-color border-0 w-100' variant='primary'>
+              <Button className='btn-primary-color border-0 w-100' variant='primary' size="lg">
                 Start Quiz
                 <span className='ps-2'>
                   <FontAwesomeIcon icon={faArrowRight} />
