@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <>
       <Container>
-        <div className="banner-section py-4">
+        <div className="banner-section p-4 shadow-lg rounded my-4">
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1>START-UP QUIZ</h1>
