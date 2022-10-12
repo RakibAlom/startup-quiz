@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <>
       <Container>
-        <div className="banner-section p-4 px-lg-5 shadow-lg rounded my-4">
+        <div className="banner-section p-4 px-lg-5 shadow rounded my-4">
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className='fw-bold'>START-UP QUIZ</h1>
