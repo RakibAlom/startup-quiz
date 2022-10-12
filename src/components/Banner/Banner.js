@@ -7,10 +7,10 @@ const Banner = () => {
   return (
     <>
       <Container>
-        <div className="banner-section p-4 p-lg-5 shadow-lg rounded my-4">
+        <div className="banner-section p-4 px-lg-5 shadow-lg rounded my-4">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1>START-UP QUIZ</h1>
+              <h1 className='fw-bold'>START-UP QUIZ</h1>
               <p>Discover your startup mindset and best work environment using our free online quiz and figure out where you can work. Get immediate feedback that you can share with programming.</p>
               <div className='mb-3'>
                 <Link to="/topics"><button className='btn btn-primary-color'>Quiz Topics</button></Link>

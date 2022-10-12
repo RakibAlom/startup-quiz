@@ -36,7 +36,7 @@ const QuizQuestion = ({ question, handleSelected, selected }) => {
               )
             }
           </div>
-          <ToastContainer className="toast-notify" />
+          <ToastContainer className="toast-notify" autoClose={3000} />
         </div>
       </div>
     </>

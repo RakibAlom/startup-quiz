@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import './About.css';
 
 const About = () => {
   return (
     <>
       <Container>
         <div className="p-4 shadow my-4 rounded">
-          <img className='img-fluid rounded' src="./images/start-up-quiz-banner.png" alt="Start-Up Quiz Banner" />
+          <img className='img-fluid rounded about-img' src="./images/start-up-quiz-banner.png" alt="Start-Up Quiz Banner" />
           <h2 className='py-3'>About Start-Up Quiz</h2>
           <div className='text-secondary'>
 

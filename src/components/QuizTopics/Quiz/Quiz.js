@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const Quiz = () => {
   const topicQuiz = useLoaderData().data;
   const [selected, setSelected] = useState("");
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
   const [correctClick, setCorrectClick] = useState(0);
   const [wrongClick, setWrongClick] = useState(0);
 
@@ -19,14 +19,16 @@ const Quiz = () => {
       setCorrectClick(correctClick + 1);
 
       toast.success("Your Answer is Correct !", {
-        position: toast.POSITION.TOP_LEFT
+        position: toast.POSITION.BOTTOM_RIGHT,
+        theme: "colored"
       });
 
     } else {
       setWrongClick(wrongClick + 1);
 
       toast.error("Sorry, Your Answer is Wrong!", {
-        position: toast.POSITION.TOP_LEFT
+        position: toast.POSITION.BOTTOM_RIGHT,
+        theme: "colored"
       });
     }
   }

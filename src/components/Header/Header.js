@@ -10,7 +10,9 @@ const Header = () => {
     <div className='header'>
       <Container>
         <Navbar className='px-3 rounded mt-3 bg-primary-color' expand="lg" variant="dark">
-          <NavLink to="/" className="navbar-brand">START-UP QUIZ</NavLink>
+          <NavLink to="/" className="navbar-brand">
+            <img src="./logo.png" alt="START-UP QUIZ" />
+          </NavLink>
           <Navbar.Toggle className='outline-none shadow-none' aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
