@@ -6,10 +6,35 @@ import { Alert } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './QuizQuestion.css'
+import { toast } from 'react-toastify';
 
-const QuizQuestion = ({ question, handleToQuizSelect, count, selected }) => {
+const QuizQuestion = ({ question, count, correctScore, setCorrectScore, wrongScore, setWrongScore }) => {
 
   const [showAnswer, setShowAnswer] = useState(false);
+  const [selected, setSelected] = useState("");
+  const [disabled, setDisabled] = useState(false);
+
+  const handleToQuizSelect = (question, option) => {
+
+    setSelected(option)
+
+    if (question.correctAnswer === option) {
+
+      setCorrectScore(correctScore + 1);
+      toast.success("Your Answer is Correct !", {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: "colored"
+      });
+    } else {
+
+      setWrongScore(wrongScore + 1);
+      toast.error("Sorry, Your Answer is Wrong!", {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: "colored"
+      });
+    }
+    setDisabled(!disabled);
+  }
 
   return (
     <>
@@ -25,11 +50,11 @@ const QuizQuestion = ({ question, handleToQuizSelect, count, selected }) => {
         }
 
         <div className="quesiton-content py-lg-4">
-          <h2 className='pe-5'>Quiz {count}: {question.question.replace(/(<([^>]+)>)/ig, '')}</h2>
+          <h3 className='pe-5'>Quiz {count}: {question.question.replace(/(<([^>]+)>)/ig, '')}</h3>
           <div className="quiz-options">
             {
               question.options.map((option, index) =>
-                <button onClick={() => handleToQuizSelect(question, option)} className={`option border-0 d-flex px-3 py-2 rounded gap-3 align-items-center shadow-sm ${selected === option ? "bg-primary-color text-white" : "bg-light"}`} key={index}>
+                <button onClick={() => handleToQuizSelect(question, option)} className={`option border-0 d-flex px-3 py-2 rounded gap-3 align-items-center shadow-sm ${selected === option ? "bg-primary-color text-white" : "bg-light"}`} disabled={disabled ? true : false} key={index}>
                   <span className='fs-3'><FontAwesomeIcon icon={selected === option ? faSquareCheck : faSquare} /></span>
                   <p className='fs-5 m-0'>{option}</p>
                 </button>
