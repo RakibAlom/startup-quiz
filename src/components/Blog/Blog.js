@@ -5,7 +5,8 @@ const Blog = () => {
   const blogs = useLoaderData()
   return (
     <>
-      <div className="container py-4">
+      <div className="container">
+        <h2 className='my-4 text-center shadow-sm py-3 rounded'>Our Blogs</h2>
         {
           blogs.map(blog =>
             <div className='single-blog p-3 p-md-4 shadow mb-4 rounded' key={blog.id}>

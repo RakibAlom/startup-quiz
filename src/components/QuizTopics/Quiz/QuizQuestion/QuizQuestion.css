@@ -23,5 +23,13 @@
   .quiz-options {
     grid-template-columns: repeat(1, 1fr);
   }
+}
 
+@media screen and (max-width:401px) {
+  .toast-notify {
+    width: 90vw;
+    left: auto;
+    top: 10px;
+    border-radius: 10px;
+  }
 }

@@ -10,20 +10,24 @@ const Statistics = () => {
   return (
     <>
       <Container>
-        <div className="statistics-chart py-4 px-0 p-lg-5 my-4 shadow">
-          <h2 className='pb-3 ps-5'>Quiz Statistics Chart</h2>
-          <LineChart
-            width={400}
-            height={300}
-            data={quizTopics}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis dataKey="total" />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="total" stroke="#82ca9d" />
-          </LineChart>
+        <div className="statistics-chart py-4 px-3 p-lg-5 my-4 shadow">
+
+          <h2 className='pb-3'>Quiz Statistics Chart</h2>
+          <ResponsiveContainer width="100%" height={400} className="rechart">
+            <LineChart
+              width={400}
+              height={300}
+              data={quizTopics}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis dataKey="total" />
+              <Tooltip />
+              <Legend />
+              <Line type="monotone" dataKey="total" stroke="#82ca9d" />
+            </LineChart>
+          </ResponsiveContainer>
+
         </div>
       </Container>
     </>

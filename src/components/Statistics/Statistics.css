@@ -1,3 +1,7 @@
 .statistics-chart {
   min-height: 90vh;
 }
+
+.rechart {
+  margin-left: -40px;
+}
