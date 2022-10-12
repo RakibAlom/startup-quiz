@@ -7,50 +7,50 @@ import { toast } from 'react-toastify';
 const Quiz = () => {
   const topicQuiz = useLoaderData().data;
   const [selected, setSelected] = useState("");
-  // const [score, setScore] = useState(0);
-  const [correctClick, setCorrectClick] = useState(0);
-  const [wrongClick, setWrongClick] = useState(0);
+  // const [correctScore, setCorrectScore] = useState(0);
+  // const [wrongScore, setWrongScore] = useState(0);
 
-  const handleSelected = (question, option) => {
+  const handleToQuizSelect = (question, option) => {
 
     setSelected(option)
 
     if (question.correctAnswer === option) {
-      setCorrectClick(correctClick + 1);
 
+      // setCorrectScore(correctScore + 1);
       toast.success("Your Answer is Correct !", {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.TOP_RIGHT,
         theme: "colored"
       });
-
     } else {
-      setWrongClick(wrongClick + 1);
 
+      // setWrongScore(wrongScore + 1);
       toast.error("Sorry, Your Answer is Wrong!", {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.TOP_RIGHT,
         theme: "colored"
       });
     }
+
   }
+
   return (
     <>
       <Container>
-        <div className='d-md-flex justify-content-between my-4 text-center shadow-sm py-2 px-2 px-lg-5 rounded'>
+        <div className='my-4 text-center shadow-sm py-2 px-2 px-lg-5 rounded'>
           <h2 className='m-0'>{topicQuiz.name} Quiz</h2>
-          <div className='d-flex justify-content-center align-items-center gap-4'>
-            {/* <span>Score: <strong className='text-primary-color'>{correctClick}</strong></span> */}
-            <span>Correct Click: <strong className='text-success'>{correctClick}</strong></span>
-            <span>Wrong Click: <strong className='text-danger'>{wrongClick}</strong></span>
-          </div>
+          {/* <div className='d-flex justify-content-center align-items-center gap-4'>
+            <span>Correct: <strong className='text-success'>{correctScore}</strong></span>
+            <span>Wrong: <strong className='text-danger'>{wrongScore}</strong></span>
+          </div> */}
         </div>
         <div className="quiz-section">
           {
-            topicQuiz.questions.map(question =>
+            topicQuiz.questions.map((question, index) =>
               <QuizQuestion
                 key={question.id}
                 question={question}
-                handleSelected={handleSelected}
+                handleToQuizSelect={handleToQuizSelect}
                 selected={selected}
+                count={index + 1}
               >
               </QuizQuestion>)
           }
